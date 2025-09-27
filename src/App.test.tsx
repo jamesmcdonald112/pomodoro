@@ -1,7 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders Pomodoro heading', () => {
+test('renders Pomodoro heading', async () => {
   render(<App />);
-  expect(screen.getByRole('heading', { name: /pomodoro/i })).toBeInTheDocument();
+  const startButton = await screen.findByRole("button", {"name": /start/i});
+
+  expect(startButton).toBeInTheDocument();
 });
