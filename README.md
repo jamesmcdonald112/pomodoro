@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+# ⏱️ Pomodoro Timer App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, offline-ready Pomodoro timer built with **React, TypeScript, Vite, and Tailwind CSS**.  
+Features test-driven development, CI workflows, and GitHub project tracking — built to simulate a professional workflow.
 
-Currently, two official plugins are available:
+![CI - Tests](https://github.com/jamesmcdonald112/pomodoro/actions/workflows/test.yml/badge.svg)
+![CI - PR Title Check](https://github.com/jamesmcdonald112/pomodoro/actions/workflows/pr-title.yml/badge.svg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
+- Start, Pause, and Resume timer with a clear circular UI.
+- Reset button to restore timer to 25:00.
+- Persistent state via local storage.
+- Offline support with service worker (planned).
+- Accessibility: keyboard operable, focus-visible styles, screen reader-friendly labels.
+- TDD setup with Vitest + React Testing Library.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
+- **Frontend:** React + TypeScript + Vite
+- **Styling:** Tailwind CSS
+- **Testing:** Vitest, React Testing Library, jsdom
+- **CI/CD:** GitHub Actions (tests + PR title linting)
+- **Project Management:** GitHub Issues, Milestones, Project Board
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
+- Node.js >= 18
+- npm >= 9
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+```bash
+git clone https://github.com/jamesmcdonald112/pomodoro.git
+cd pomodoro
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Development
+```bash
+npm run dev
 ```
+
+### Testing 
+```bash
+npm test
+```
+
+⸻
+
+### 🗺️ Roadmap
+- Start button & basic countdown logic
+- Reset button
+- Break phases (short/long)
+- Offline support with service worker
+- Task grouping & persistence with accounts
+
+⸻
+
+### 📌 Project Management
+- Issues
+- Project Board
+- Milestones
+
+⸻
+
+### 🤝 Contributing
+1. Fork the repo
+2. Create a feature branch (git checkout -b feat/your-feature)
+3. Commit with Conventional Commits style
+4. Push and open a Pull Request
+
+⸻
+
+### 📄 License
+
+MIT License – free to use and modify.
