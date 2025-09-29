@@ -5,9 +5,6 @@ type BaseButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: "sm" | "md" | "lg";
   isLoading?: boolean;
 };
-function helloWorld() {
-  console.log("hi");
-}
 
 export default function BaseButton({
   children,
@@ -31,9 +28,6 @@ export default function BaseButton({
     lg: "px-8 py-4 text-lg",
   };
 
-  if (variant == "neutral") {
-    helloWorld();
-  }
   return (
     <button
       type={type}
