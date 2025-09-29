@@ -1,38 +1,45 @@
-import React from "react";
+import React from 'react'
 
 type BaseButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "primary" | "secondary" | "danger" | "neutral";
-  size?: "sm" | "md" | "lg";
-  isLoading?: boolean;
-};
+  variant?: 'primary' | 'secondary' | 'danger' | 'neutral'
+  size?: 'sm' | 'md' | 'lg'
+  isLoading?: boolean
+}
+
+function sayHello() {
+  console.log('hi')
+}
 
 export default function BaseButton({
   children,
-  "aria-label": ariaLabel,
-  variant = "neutral",
-  size = "md",
-  type = "button",
+  'aria-label': ariaLabel,
+  variant = 'neutral',
+  size = 'md',
+  type = 'button',
   disabled,
   isLoading = false,
   ...rest
 }: BaseButtonProps) {
   const variantStyles: Record<typeof variant, string> = {
-    primary: "bg-primary-light dark:bg-primary-dark",
-    secondary: "bg-secondary-light dark:bg-secondary-dark",
-    danger: "bg-danger-light dark:bg-danger-dark",
-    neutral: "bg-neutral-light dark:bg-neutral-dark",
-  };
+    primary: 'bg-primary-light dark:bg-primary-dark',
+    secondary: 'bg-secondary-light dark:bg-secondary-dark',
+    danger: 'bg-danger-light dark:bg-danger-dark',
+    neutral: 'bg-neutral-light dark:bg-neutral-dark',
+  }
 
+  if (variant == 'neutral') {
+    sayHello()
+  }
   const sizeStyles = {
-    sm: "px-3 py-1 text-sm",
-    md: "px-6 py-3",
-    lg: "px-8 py-4 text-lg",
-  };
+    sm: 'px-3 py-1 text-sm',
+    md: 'px-6 py-3',
+    lg: 'px-8 py-4 text-lg',
+  }
 
   return (
     <button
       type={type}
-      aria-label={ariaLabel}      
+      aria-label={ariaLabel}
       disabled={disabled || isLoading}
       className={`
         w-full md:min-w-[120px] md:w-auto
@@ -49,5 +56,5 @@ export default function BaseButton({
     >
       {isLoading ? <span>Loading...</span> : children}
     </button>
-  );
+  )
 }
