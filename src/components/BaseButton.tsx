@@ -22,7 +22,6 @@ export default function BaseButton({
     danger: "bg-danger-light dark:bg-danger-dark",
     neutral: "bg-neutral-light dark:bg-neutral-dark",
   };
-
   const sizeStyles = {
     sm: "px-3 py-1 text-sm",
     md: "px-6 py-3",
@@ -32,7 +31,7 @@ export default function BaseButton({
   return (
     <button
       type={type}
-      aria-label={ariaLabel}      
+      aria-label={ariaLabel}
       disabled={disabled || isLoading}
       className={`
         w-full md:min-w-[120px] md:w-auto
