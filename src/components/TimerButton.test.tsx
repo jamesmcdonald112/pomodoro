@@ -5,7 +5,7 @@ test('renders Start button to the screen', () => {
   const handleClick = vi.fn()
   render(<TimerButton toggleStart={handleClick} label="Start" />)
 
-  const startButton = screen.getByRole('button', { name: /star/i })
+  const startButton = screen.getByRole('button', { name: /start/i })
 
   expect(startButton).toBeInTheDocument()
 
